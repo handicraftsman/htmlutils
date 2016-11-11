@@ -38,5 +38,19 @@ module HtmlUtils
     
     str << "</table>\n"
   end
+  
+  # Allows easily adding keywords
+  def self.keywords(words)
+    str = ""
+    words.each do |word|
+      str << "#{word},"
+    end
+    %{<meta name="keywords" contents="#{str[0..-2]}">}
+  end
+  
+  # Shortcut for string below
+  def self.utf8
+    %{<meta charset="UTF-8">}
+  end  
 end
 

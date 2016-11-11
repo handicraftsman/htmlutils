@@ -37,4 +37,9 @@ HTML
 HTML
     assert_equal expected, HtmlUtils.makeVTable([["Name", "go", "ruby"], ["Version", "1.7", "1.8"]])
   end
+  
+  def test_keywords
+    expected = %{<meta name="keywords" contents="foo,bar,ruby,htmlutils">}
+    assert_equal expected, HtmlUtils.keywords(["foo", "bar", "ruby", "htmlutils"])
+  end
 end
