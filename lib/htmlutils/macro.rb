@@ -16,6 +16,15 @@ module HtmlUtils
     end
     str
   end
+
+  # Generates HTML-loading code. Good for polymer-using apps.
+  def self.importHTML(urls)
+    str = ""
+    urls.each do |url|
+      str << %{<link rel="import" href="#{url}">\n}
+    end
+    str
+  end
   
   # Generates vertical table
   def self.makeVTable(data, mainAttr="", trhAttr="", thAttr="", trAttr="", tdAttr="")
